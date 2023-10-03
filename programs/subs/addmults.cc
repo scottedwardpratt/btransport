@@ -213,7 +213,6 @@ void addmults(int p1,int q1,int p2,int q2,Tweightlist *weightlist){
 	}
 }
 
-
 void addmults_list(int p1,int q1,double n1,
 int p2,int q2,double n2,Tpqlist *pqlist){
 	int p,q,ip2,iq2,i,na0min,na1min,na1max,nb1min,nb1max;
