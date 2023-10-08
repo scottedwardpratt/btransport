@@ -32,9 +32,9 @@ int main(){
 				f[a][b][c]=M.trace();
 				M=0.25*(lambda[a]*lambda[b]+lambda[b]*lambda[a])*lambda[c];
 				d[a][b][c]=M.trace();
-				printf("f[%d][%d][%d]=(%6.3f,%6.3f), d[%d][%d][%d]=(%6.3f,%6.3f)\n",
-				a,b,c,real(f[a][b][c]),imag(f[a][b][c]),
-				a,b,c,real(d[a][b][c]),imag(d[a][b][c]));
+				//printf("f[%d][%d][%d]=(%6.3f,%6.3f), d[%d][%d][%d]=(%6.3f,%6.3f)\n",
+				////a,b,c,real(f[a][b][c]),imag(f[a][b][c]),
+				//a,b,c,real(d[a][b][c]),imag(d[a][b][c]));
 			}
 		}
 	}
@@ -100,6 +100,27 @@ int main(){
 			}
 		}
 	}
+	
+	complex<double> d2=0.0,funkyd=0.0,d2test=0.0;
+	int i,j,k;
+	for(a=0;a<8;a++){
+		for(b=0;b<8;b++){
+			for(c=0;c<8;c++){
+				d2test+=2.0*d[a][b][c]*d[a][b][c];
+				for(i=0;i<3;i++){
+					for(j=0;j<3;j++){
+						for(k=0;k<3;k++){
+							d2+=d[a][b][c]*lambda[a](i,j)*lambda[b](j,k)*lambda[c](k,i);
+							funkyd+=d[a][b][c]*lambda[a](j,k)*lambda[b](j,i)*lambda[c](k,i);
+						}
+					}
+				}
+			}
+		}
+	}
+	printf("d2=(%g,%g) =? (%g,%g), funky=(%g,%g)\n",real(d2),imag(d2),real(d2test),imag(d2test),real(funkyd),imag(funkyd));
+	
+	
 	
 	return 0;
 }
