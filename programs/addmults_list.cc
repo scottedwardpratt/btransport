@@ -8,7 +8,7 @@ const double HBARC=197.3269602;
 using namespace std;
 
 #include "subs/misc.cc"
-#include "subs/pq.cc"
+#include "subs/newpq.cc"
 #include "subs/tableaux.cc"
 #include "subs/addmults.cc"
 

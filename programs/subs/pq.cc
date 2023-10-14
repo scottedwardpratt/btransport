@@ -41,7 +41,8 @@ Tpqlist::Tpqlist(int pqmax_set){
 	pqptr_array=new Tpq **[pqmax+1];
 	for(p=0;p<=pqmax;p++){
 		pqptr_array[p]=new Tpq *[pqmax+1];
-		for(q=0;q<=pqmax;q++) pqptr_array[p][q]=NULL;
+		for(q=0;q<=pqmax;q++)
+			pqptr_array[p][q]=NULL;
 	}
 }
 

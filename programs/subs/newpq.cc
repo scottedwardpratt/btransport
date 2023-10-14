@@ -4,6 +4,11 @@ public:
   double n;
   Tpq *next;
   Tpq(int pset,int qset,double nset);
+	double C1,C2;
+	void Casimir12(){
+		C1=(p*p+q*q+3.0*p+3.0*q+p*q)/3.0;
+		C2=(p-q)*(3.0+p+2.0*q)*(3.0+q+2.0*p)/18.0;
+	}
 };
 
 Tpq::Tpq(int pset,int qset,double nset){
@@ -24,6 +29,7 @@ public:
   void cgluon(int ell);
   void cquark(int ell);
   void compress();
+	void print();
 };
 
 Tpqlist::Tpqlist(int pqmax_set){
@@ -66,6 +72,26 @@ void Tpqlist::compress(){
     }
   }
 
+}
+
+void Tpqlist::print(){
+	Tpq *pqptr;
+	pqptr=first;
+	double Bx,phi;
+	printf("------------------------------------------------------------\n");
+	do{
+		pqptr->Casimir12();
+		phi=2.0*PI*pqptr->C2/3.0;
+		Bx=sin(3*phi)/sin(2.0*PI/9.0);
+		phi=phi-Bx*2*PI/27.0;
+		phi=phi-2.0*PI*rint(phi/(2.0*PI));
+		//Fx=3*floor(pqptr->C2);
+		//Bx=3*pqptr->C2-floor(3*pqptr->C2);
+		printf("(%2d,%2d), degen=%5d, number=%5ld, C1=%12.6f, C2=%12.6f, phi=%9.3f, Bx=%9.6f\n",
+		pqptr->p,pqptr->q,
+		degen(pqptr->p,pqptr->q),lrint(pqptr->n),pqptr->C1,pqptr->C2,phi*180.0/PI,Bx);
+		pqptr=pqptr->next;
+	} while(pqptr!=NULL);
 }
 
 void Tpqlist::add(int p,int q,double n){
