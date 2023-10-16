@@ -63,6 +63,7 @@ int main(){
 		}
 	}
 	
+	printf("----------------\nd_abcd_a'bc=\n");
 	Eigen::Matrix<complex<double>,8,8> D;
 	for(a=0;a<8;a++){
 		for(aprime=0;aprime<8;aprime++){
@@ -76,6 +77,7 @@ int main(){
 		}
 		printf("\n");
 	}
+	printf("----------------\n");
 	
 	// Calc constant sum_abc d_abc^2
 	double sum=0.0;
