@@ -1,6 +1,7 @@
 class Tpq{
 public:
   int p,q;
+	long long int degen;
   double n;
   Tpq *next;
   Tpq(int pset,int qset,double nset);
@@ -12,31 +13,40 @@ public:
 };
 
 Tpq::Tpq(int pset,int qset,double nset){
-  p=pset;
-  q=qset;
-  n=nset;
-  next=NULL;
+	p=pset;
+	q=qset;
+	n=nset;
+	next=NULL;
+	degen=(p+1)*(q+1)*(p+q+2)/2;
+	Casimir12();
 }
 
 class Tpqlist{
 public:
-  int pqmax;
-  Tpq *first;
-  Tpq *last;
-  Tpqlist(int Amax);
-  void add(int p,int q,double n);
-  void clear();
-  void cgluon(int ell);
-  void cquark(int ell);
-  void compress();
+	int pqmax;
+	Tpq ***pqptr_array;
+	Tpq *first;
+	Tpq *last;
+	Tpqlist(int Amax);
+	void add(int p,int q,double n);
+	void clear();
+	void cgluon(int ell);
+	void cquark(int ell);
+	void compress();
 	void print();
 };
 
 Tpqlist::Tpqlist(int pqmax_set){
-  int p,q;
-  pqmax=pqmax_set;
-  first=NULL;
-  last=NULL;
+	int p,q;
+	pqmax=pqmax_set;
+	first=NULL;
+	last=NULL;
+	pqptr_array=new Tpq **[pqmax+1];
+	for(p=0;p<=pqmax;p++){
+		pqptr_array[p]=new Tpq *[pqmax+1];
+		for(q=0;q<=pqmax;q++)
+			pqptr_array[p][q]=NULL;
+	}
 }
 
 void Tpqlist::compress(){
@@ -112,15 +122,20 @@ void Tpqlist::add(int p,int q,double n){
 }
 
 void Tpqlist::clear(){
-  Tpq *next;
-  next=first;
-  while(first!=NULL){
-    next=first->next;
-    delete first;
-    first=next;
-  }
-  first=NULL;
-  last=NULL;
+	Tpq *next;
+	next=first;
+	while(first!=NULL){
+		next=first->next;
+		delete first;
+		first=next;
+	}
+	first=NULL;
+	last=NULL;
+	for(int p=0;p<=pqmax;p++){
+		for(int q=0;q<=pqmax;q++){
+				pqptr_array[p][q]=NULL;
+		}
+	}
 }
 
 void Tpqlist::cgluon(int ell){

@@ -80,7 +80,7 @@ Because all observables must be invariant to rotations in color space, one knows
 \begin{eqnarray}
 Q_{a,\Omega}&=&\int d\Omega_\mu j^{\mu}_a(x),\\
 \nonumber
-\langle Q^{(2)}_{\Omega_1,\Omega_2}\rangle&=&\int d\Omega_{1,\mu}\Omega_{2,\nu}\langle j^\mu_a(x_1) j^\nu_a(x)\rangle,\\
+\langle Q^{(2)}_{\Omega_1,\Omega_2}\rangle&=&\int d\Omega_{1,\mu}d\Omega_{2,\nu}\langle j^\mu_a(x_1) j^\nu_a(x_2)\rangle,\\
 \nonumber
 &=&\langle Q_{a,\Omega_1}Q_{a,\Omega_2}\rangle,\\
 \nonumber
@@ -88,15 +88,55 @@ Q_{a,\Omega}&=&\int d\Omega_\mu j^{\mu}_a(x),\\
 \nonumber
 &=&\langle Q_{a,\Omega_1}j^\nu_a(x)\rangle.
 \end{eqnarray}
-Here, the superscripts $(2)$ reference the fact that these correlations are quadratic in the color charge. The volumes $\Omega_1$ and $\Omega_2$ can be any chosen volumes. If the volumes cover all space, and if the system is in an overall color singlet, $Q^{(2)}=0$. One can also define correlators using the fields,
+Here, the superscripts $(2)$ reference the fact that these correlations are quadratic in the color charge. The volumes $\Omega_1$ and $\Omega_2$ can be any chosen volumes, but would usually be the same volume. If the volumes cover all space, and if the system is in an overall color singlet, $Q^{(2)}=0$. One can also define correlators using the fields,
 \begin{eqnarray}
-\langle G^{(2)\mu\nu}_{\Omega}(x)\rangle&=&\int d\Omega_1\langle Q_{a,\Omega}G^{\mu\nu}_a(x)\rangle.
+\langle G^{(2)\mu\nu}_{\Omega}(x)\rangle&=&\int d\Omega\langle Q_{a,\Omega}G^{\mu\nu}_a(x)\rangle.
 \end{eqnarray}
+
+As mentioned above, the correlators $\langle\mathcal{O}_a(x)\mathcal{P}_a(x)\rangle$ are gauge-invariant for any operators $\mathcal{O}$ or $\mathcal{P}$ that transform as the color charge, or equivalently as the 8 generators in SU(3). In fact, there are other combinations of operators that transform as color singlets. SU(3) has two Casimir operators, a Casimir being some combination of the group generators that commute with the eight generators, $\lambda_a$. The first Casimir, often referred to as the quadratic Casimir
+\begin{eqnarray}
+C^{\rm(quadratic)}&=&\sum_a\lambda_a\lambda_a,
+\end{eqnarray}
+corresponds to the two-body correlators above. Unlike SU(2), SU(3) has a second Casimir, the cubic Casimir,
+\begin{eqnarray}
+C^{\rm(cubic)}&=&\sum_{abc}d_{abc}\lambda_a\lambda_b\lambda_c,
+\end{eqnarray}
+where $d_{abc}$ are the symmetric structure constants.
+\begin{eqnarray}
+{\lambda_a,\lambda_b}&=&\frac{4}{3}\delta_{ab}+d_{abc}\lambda_c.
+\end{eqnarray}
+Once can define a second current and charge-like operators, based on the cubic Casimir,
+\begin{eqnarray}
+\langle j^{(3)\mu}_{\Omega_1,\Omega_2}(x)\rangle &=&d_{abc}\langle Q_{a,\Omega_1}Q_{b,\Omega_1}j^\mu_c(x)\rangle,\\
+\nonumber
+\langle Q^{(3)}_{\Omega_1,\Omega_2,\Omega_3}\rangle&=&d_{abc}\int d\Omega_{1,\mu}d\Omega_{2,\nu}d\Omega_{3,\eta}\langle j^\mu_a(x_1) j^\nu_a(x_2)j^\eta_c(x_3)\rangle\\
+\nonumber
+&=&d_{abc}\langle Q_{a,\Omega_1}Q_{b,\Omega_2},Q_{c,\Omega_3}\rangle.
+\end{eqnarray}
+Again, the three volumes would typically be the same. One can define the corresponding correlations involving field operators,
+\begin{eqnarray}
+\langle G^{(3)\mu\nu}_{\Omega_1,\Omega_2}(x)\rangle&=&d_{abc}\langle Q_{a,\Omega_1}Q_{b,\Omega_2}
+G^{\mu\nu}_c(x)\rangle.
+\end{eqnarray}
+
+For the purposes of this discussion, two vector quantities are defined,
+\begin{eqnarray}
+E^{(2)}_{\Omega,i}(x)&=&\langle G^{(2)0i}_{\Omega}(x)\rangle,\\
+\nonumber
+E^{(3)}_{\Omega_1,\Omega_2,i}(x)&=&\langle G^{(3)0i}_{\Omega_1,\Omega_2}(x)\rangle.
+\end{eqnarray}
+These represent two measures of the color electric field, but are in fact correlators. They have no color index, as their color is defined relative to the color of the matter within the volume $\Omega$. These spatial vectors participate in two versions of Gauss's Law,
+\begin{eqnarray}
+ \oint d\vec{S}_2\cdot\vec{E}^{(2)}_{\Omega_1}(x_2)&=&Q^{(2)}_{\Omega_1,\Omega_2},\\
+ \nonumber
+ \oint d\vec{S}_3\cdot\vec{E}^{(3)}_{\Omega_1,\Omega_2}(x_3)&=&Q^{(3)}_{\Omega_1,\Omega_2,\Omega_3}.
+\end{eqnarray}
+Again, the volumes, $\Omega_1,\Omega_2,\Omega_3$, would usually be chosen as being the same.
 
 \begin{acknowledgments}
 This work was supported by the Department of Energy Office of Science through grant number DE-FG02-03ER41259.
 \end{acknowledgments}
 
-\input biblio.tex
+\bibliography{btransport}
 
 \end{document}

@@ -1,6 +1,6 @@
 class Tpq{
 public:
-	int p,q;
+	int p,q,degen;
 	double n;
 	Tpq *next;
 	Tpq(int pset,int qset,double nset);
@@ -16,6 +16,8 @@ Tpq::Tpq(int pset,int qset,double nset){
 	q=qset;
 	n=nset;
 	next=NULL;
+	degen=(p+1)*(q+1)*(p+q+2)/2;
+	Casimir12();
 }
 
 class Tpqlist{
@@ -67,34 +69,37 @@ void Tpqlist::print(){
 
 void Tpqlist::compress(){
 	Tpq *pq1,*pq2,*oldpq1,*pqtemp,*nextpq1;
+	
+	if(first!=NULL){
 
-	for(pq2=first->next;pq2!=NULL;pq2=pq2->next){
-		oldpq1=NULL;
+		for(pq2=first->next;pq2!=NULL;pq2=pq2->next){
+			oldpq1=NULL;
 
-		for(pq1=first;pq1!=pq2;pq1=nextpq1){
+			for(pq1=first;pq1!=pq2;pq1=nextpq1){
 
-			nextpq1=pq1->next;
-			if(pq1->p==pq2->p && pq1->q==pq2->q){
-				pqptr_array[pq2->p][pq2->q]=pq2;
-				if(pq1==first){
-					pqtemp=first;
-					first=first->next;
-					pq1=first;
+				nextpq1=pq1->next;
+				if(pq1->p==pq2->p && pq1->q==pq2->q){
+					pqptr_array[pq2->p][pq2->q]=pq2;
+					if(pq1==first){
+						pqtemp=first;
+						first=first->next;
+						pq1=first;
+					}
+					else{
+						pqtemp=pq1;
+						if(oldpq1==NULL){
+							printf("oldpq1=NULL?? error!\n");
+							exit(1);
+						}
+						oldpq1->next=pq1->next;
+						pq1=oldpq1;
+					}
+					pq2->n+=pqtemp->n;
+					delete pqtemp;
 				}
 				else{
-					pqtemp=pq1;
-					if(oldpq1==NULL){
-						printf("oldpq1=NULL?? error!\n");
-						exit(1);
-					}
-					oldpq1->next=pq1->next;
-					pq1=oldpq1;
+					oldpq1=pq1;
 				}
-				pq2->n+=pqtemp->n;
-				delete pqtemp;
-			}
-			else{
-				oldpq1=pq1;
 			}
 		}
 	}
@@ -136,6 +141,11 @@ void Tpqlist::clear(){
 	}
 	first=NULL;
 	last=NULL;
+	for(int p=0;p<=pqmax;p++){
+		for(int q=0;q<=pqmax;q++){
+				pqptr_array[p][q]=NULL;
+		}
+	}
 }
 
 void Tpqlist::cgluon(int ell){
