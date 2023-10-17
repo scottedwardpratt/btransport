@@ -110,7 +110,7 @@ It is this second Casimir that will be associated with baryon transport. Once ca
 \begin{eqnarray}
 \langle j^{(3)\mu}_{\Omega_1,\Omega_2}(x)\rangle &=&d_{abc}\langle Q_{a,\Omega_1}Q_{b,\Omega_1}j^\mu_c(x)\rangle,\\
 \nonumber
-\langle Q^{(3)}_{\Omega_1,\Omega_2,\Omega_3}\rangle&=&d_{abc}\int d\Omega_{1,\mu}d\Omega_{2,\nu}d\Omega_{3,\eta}\langle j^\mu_a(x_1) j^\nu_a(x_2)j^\eta_c(x_3)\rangle\\
+\langle Q^{(3)}_{\Omega_1,\Omega_2,\Omega_3}\rangle&=&d_{abc}\int d\Omega_{1,\mu}d\Omega_{2,\nu}d\Omega_{3,\eta}\langle j^\mu_a(x_1) j^\nu_b(x_2)j^\eta_c(x_3)\rangle\\
 \nonumber
 &=&d_{abc}\langle Q_{a,\Omega_1}Q_{b,\Omega_2},Q_{c,\Omega_3}\rangle.
 \end{eqnarray}
@@ -134,9 +134,9 @@ These represent two measures of the color electric field, but are in fact correl
 \end{eqnarray}
 Again, the volumes, $\Omega_1,\Omega_2,\Omega_3$, might or might not be chosen as being the same.
 
-For a flux tube, where the fields are constant across a cross section $\sigma$, one can define a volume $\Omega$ as all tube to the left of some position where we bisect the tube. If the charge with that volume are $Q^{(2)}_{\Omega,\Omega}$, Gauss's law states that the field is 
+For a flux tube, where the fields are constant across a cross section $A$, one can define a volume $\Omega$ as all tube to the left of some position where we bisect the tube. If the charge with that volume are $Q^{(2)}_{\Omega,\Omega}$, Gauss's law states that the field is 
 \begin{eqnarray}
-E^{(2)}_{\Omega,\Omega}&=&\frac{1}{\sigma}Q^{(2)}_{\Omega,\Omega}\\
+E^{(2)}_{\Omega,\Omega}&=&\frac{1}{A}Q^{(2)}_{\Omega,\Omega}\\
 \nonumber
 &=&\langle Q_{a,\Omega}E_a\rangle.
 \end{eqnarray}
@@ -148,9 +148,9 @@ For a single charge $a$, $\langle Q_{a,\Omega}Q_{a,\Omega}\rangle=\langle Q^{(2)
 \end{eqnarray}
 The energy per unit length, or string tension is then
 \begin{eqnarray}
-\frac{E}{L}&=&\frac{\sigma}{2}\frac{(E^{(2)}_{\Omega,\Omega})^2}{Q^{(2)}_{\Omega,\Omega}}\\
+\frac{E}{L}&=&\frac{A}{2}\frac{(E^{(2)}_{\Omega,\Omega})^2}{Q^{(2)}_{\Omega,\Omega}}\\
 \nonumber
-&=&\frac{1}{2\sigma}Q^{(2)}_{\Omega,\Omega}.
+&=&\frac{1}{2A}Q^{(2)}_{\Omega,\Omega}.
 \end{eqnarray}
 Thus, $Q^{(2)}$ is a measure of the energy per unit length of the tube, although if the area changes with the strength of the field, the correspondence is not purely linear.
 
@@ -176,7 +176,7 @@ Here, $\vec{r}$ is inside $\delta\Omega$. Whereas the usual step in deriving Kub
 \langle[\vec{j}_a(\vec{r}),\rho_a(\vec{r}',t')]\rangle  \vec{r}'\cdot\vec{E}^{(3)}_{\Omega,\Omega}({\rm in}~\delta\Omega).
 \end{eqnarray}
 Aside from the color indices, the prefactor to the electric field is the same as for calculating the Kubo relation for a normal electromagnetic field. This yields the result,
-\begin{eqnarray}
+\begin{eqnarray}\label{eq:kubo}
 \langle\vec{j}^{(3)}_{\Omega\Omega}(\vec{r})\rangle&=&\sigma \vec{E}^{(3)}_{\Omega,\Omega}(\vec{r}),\\
 \nonumber
 \sigma(\vec{r})&=&\frac{1}{2T}\int_{-\infty}^\infty dt'\int d^3r'~\langle\{\vec{j}_{ax}(\vec{r},t=0),\vec{j}_{ax}(\vec{r}',t')\}\rangle.
@@ -185,17 +185,18 @@ Thus, the conductivity, $\sigma$, doesn't include any mention of $\Omega$, and o
 
 If quarks and gluons are free, one can have currents and fields as presented above. However, if the world is comprised of color singlets, there is no current, but ther can be polarization. As will be discussed in the next subsection, the current $\vec{j}^{(3)}$ is correlated to a baryon current. Similarly, one can define a polarization of the color fields, that is also correlated to the polarization of baryon charge. Here, operators that play the role of polarization, and are also based on the cubic Casimir, are presented. 
 
-The polarization correlator is defined here as
+The polarization operator is defined here as
 \begin{eqnarray}
 \vec{\mathcal{P}}_{\Omega_1,\Omega_2}^{(3)}(\vec{r})=\vec{r}d_{abc}\langle Q_{a,\Omega_1}Q_{b,\Omega_2}\rho_c(\vec{r})\rangle.
 \end{eqnarray}
 Using the same interaction as was used for the calculation of the conductivity above, one can calculate the thermal expectation of the polarization. Setting $\Omega_1=\Omega_2=\Omega$, and factoring out $E^{(3)}$ as was done earlier, one finds
-\begin{eqnarray}
-\vec{\mathcal{P}}_{\Omega,\Omega}^{(3)}(\vec{r})&=&\kappa \vec{E}^{(3)}_{\Omega,\Omega}(\vec{r}),\\
+\begin{eqnarray}\label{eq:polarization}
+\langle\vec{\mathcal{P}}_{\Omega,\Omega}^{(3)}(\vec{r})\rangle&=&\kappa \langle\vec{E}^{(3)}_{\Omega,\Omega}(\vec{r})\rangle,\\
 \nonumber
 \kappa(\vec{r})&=&\frac{1}{3T}\int d^3r'\langle \rho_a(\vec{r})[\vec{r}\cdot\vec{r}']\rho_a(\vec{r}')\rangle.
 \end{eqnarray}
 As was the case for the conductivity, this expression for the polarizability does not depend on the the volume $\Omega$. If the charges appear in uncorrelated $\pm$ pairs, the polarizability becomes $g^2\langle(x_+-x_-)^2\rangle\rho_d$, where $\rho_d$ is the density of dipoles and $x_+-x_-$ is the distance between the two charges, $\pm g$. 
+
 
 
 \subsection{Relation to Baryon Transport}
@@ -207,13 +208,13 @@ C^{\rm cubic}&=&(p-q)(2p+q+3)(2q+3q+3).
 \end{eqnarray}
 The multiplet labels $p$ and $q$ and the charge labels $Q^{(2)}$ and $Q^{(3)}$ represent alternative means to identify the multiplet. The labels $p$ and $q$ can be uniquely expressed in terms of the charges by solving a cubic equation. Defining
 \begin{eqnarray}
-c&\equiv&-9Q^{(2)}-9,\\
+c&\equiv&9Q^{(2)}+9,\\
 \nonumber
 d&\equiv&18Q^{(3)},\\
 \nonumber
-\alpha&=&-2\pi /3+\frac{1}{3}\cos^{-1}[(3d/2c)\sqrt(-3/c)],\\
+\alpha&=&-2\pi /3+\frac{1}{3}\cos^{-1}[(3d/2c)\sqrt{3/c}],\\
 \nonumber
-y&=&2\sqrt{-c/3}\cos[\alpha],\\
+y&=&2\sqrt{c/3}\cos\alpha,\\
 \nonumber
 x&=&-2+\sqrt{4+Q^{(2)}-y^2/3},\\
 \nonumber
@@ -223,9 +224,88 @@ q&=&(x-y)/2.
 \end{eqnarray}
 The other two solutions to the cubic equation result in either $p$ or $q$ being negative. The solutions are unique in that no two combinations of  $Q^{(2)}$ and $Q^{(3)}$ result in the same $p$ and $q$.
 
-Given that a quark has $p=1,q=0$ and an antiquark has $p=0,q=1$, it is natural to expect that a multiplet with $p>q$ will more likely dissolve into quarks, and that a multiplet with $q>p$ would more likely result in antiquarks.
+Given that a quark has $p=1,q=0$ and an antiquark has $p=0,q=1$, it is natural to expect that a multiplet with $p>q$ will more likely dissolve into quarks, and that a multiplet with $q>p$ would more likely result in antiquarks. Given that $Q^{(3)}$ is an odd function of $p-q$ and that $Q^{(2)}$ is an even function, any correlation with baryon number is through the correlation with $Q^{(3)}$. Correspondingly, the field $E^{(2)}$ does not drive baryon transport, but $E^{(3)}$ does.
+
+To express baryon transport, one must first understand $d\langle B\rangle/d\langle Q^{(3)}\rangle$. Once this is determined, the baryon current is
+\begin{eqnarray}
+\vec{j}_B(\vec{r})&=&\frac{d\langle B_{\delta\Omega}\rangle}{dQ^{(3)}_{\Omega,\Omega,\delta\Omega}}\sigma \vec{E}^{(3)}_{\Omega,\Omega}(\vec{r}).
+\end{eqnarray}
+Here, $\vec{r}\in\delta\Omega$. This represents the current inside the $\delta\Omega$ driven by the charge in $\Omega$. Statistical considerations give
+\begin{eqnarray}
+\frac{d\langle B_{\delta\Omega}\rangle}{dQ^{(3)}_{\Omega,\Omega,\delta\Omega}}&=&
+\frac{\langle B_{\delta\Omega} Q^{(3)}_{\Omega,\Omega,\delta\Omega}\rangle}
+{\langle [Q^{(3)}_{\Omega,\Omega,\delta\Omega}]^2  \rangle}.
+\end{eqnarray}
+
+One can follow the same arguments to calculate the baryon polarizability operator,
+\begin{eqnarray}
+\vec{P}_B(\vec{r})&=&\vec{r}d_{abc}\langle \rho_B(\vec{r})\rangle.
+\end{eqnarray}
+The ratio of $P_B$ to $P^{(3)}$ is the same as would be used for the current above. The baryon current and polarizability are then
+\begin{eqnarray}
+\langle\vec{j}_B(\vec{r})\rangle&=&\frac{d\langle B_{\delta\Omega}\rangle}{dQ^{(3)}_{\Omega,\Omega,\delta\Omega}}\sigma
+\langle\vec{E}^{(3)}_{\Omega,\Omega}(\vec{r})\rangle,\\
+\nonumber
+\langle\vec{P}_B(\vec{r})\rangle&=&\frac{d\langle B_{\delta\Omega}\rangle}{dQ^{(3)}_{\Omega,\Omega,\delta\Omega}}\kappa
+\langle\vec{E}^{(3)}_{\Omega,\Omega}(\vec{r})\rangle.
+\end{eqnarray}
+
+\subsection{Scaled Correlators}
+
+The operators $Q^{(2)}, Q^{(3)},E^{(2)}(\vec{r})$ and $E^{(3)}(\vec{r})$ are correlators. If one assigns a dimension to charge coupling $g$, the units are $g^2$, $g^3$, $g^2/L^2$ and $g^3/L^3$, where $L$ refers to units of length. The operator $Q^{(2)}_{\Omega,\Omega}$ represents a fluctuation, and if one has a bulk system with independent color charges, and no long-range correlation, it would scale with the volume $\Omega$. If one were to consider $Q^{(3)}_{\Omega,\Omega,\delta\Omega}$ and the two field-like operators $E^{(2)}_{\Omega}(\vec{r})$ and $E^{(3)}_{\Omega,\Omega}(\vec{r})$, one would see that for independent charges, the fluctuations of these operators would scale, in the large $\Omega$ limit, as
+\begin{eqnarray}
+\langle [E^{(2)}_{\Omega}(\vec{r})]^2\rangle\propto \Omega,\\
+\nonumber
+\langle [Q^{(3)}_{\Omega,\Omega,\delta\Omega}]^2\rangle \propto \Omega^2\delta\Omega,\\
+\nonumber
+\langle [E^{(3)}_{\Omega,\Omega}(\vec{r})]^2\rangle\propto \Omega^2.
+\end{eqnarray}
+The correlator with baryon number would scale as
+\begin{eqnarray}
+\langle Q^{(3)}_{\Omega,\Omega,\delta\Omega}B_{\delta\Omega}\rangle\propto \Omega\delta\Omega.
+\end{eqnarray}
+Thus, if one were to consider a long flux tube, with $\Omega$ defined as everything to one side, the fluctuation of the field operators at the center of the tube would increase with the size of the tube,and the ratio of $d\langle B\rangle/d\langle Q^{(3)}\rangle$ would fall with size of the tube. 
+
+One can scale the three operators above so that their dimensions and scaling with size are in line with the charge and field operators with which we are more accustomed.
+\begin{eqnarray}
+\tilde{\vec{E}}^{(2)}_{\Omega}(\vec{r})&\equiv&\frac{\tilde{\vec{E}}^{(2)}_{\Omega}(\vec{r})}{\langle Q^{(2)}_{\Omega,\Omega}\rangle^{1/2}},\\
+%\nonumber
+\tilde{\rho}^{(3)}_{\Omega,\Omega}(\vec{r})&\equiv&\frac{\rho^{(3)}_{\Omega,\Omega}(\vec{r})}{\langle Q^{(2)}_{\Omega,\Omega}\rangle},\\
+%\nonumber
+\vec{\tilde{\mathcal{P}}}_{\Omega,\Omega}^{(3)}(\vec{r})&\equiv&\frac{\vec{\tilde{\mathcal{P}}}_{\Omega_1,\Omega_2}^{(3)}}{\langle Q^{(2)}_{\Omega,\Omega}\rangle}\\
+\nonumber
+\tilde{Q}^{(3)}_{\Omega,\Omega,\delta\Omega}&\equiv&\frac{Q^{(3)}_{\Omega,\Omega,\delta\Omega}}{\langle Q^{(2)}_{\Omega,\Omega}\rangle},\\
+\nonumber
+\tilde{\vec{E}}^{(3)}_{\Omega,\Omega}(\vec{r})&\equiv&\frac{\vec{E}^{(3)}_{\Omega,\Omega}(\vec{r})}{\langle Q^{(2)}_{\Omega,\Omega}\rangle}.
+\end{eqnarray}
+With these definitions, $\tilde{Q}^{(3)}$ has dimensions of charge and $\tilde{E}^{(2)}$ and $\tilde{E}^{(3)}$ both have dimensions of charge per distance. The energy density is then more in line with $|\tilde{E}_{\Omega}^{(2)}(\vec{r})|^2/2$. Again, this would be, roughly, the energy density arising from the charges within $\Omega$. Correlators using any of the quantities scaled as above would then no longer grow with increasing $\Omega$ for systems with no long-range correlations. The charge correlators involving two operators labeled by $\delta\Omega$ would scale with $\delta\Omega$. 
 
 
+The Kubo relations would also become
+\begin{eqnarray}
+\langle \vec{\tilde{j}}^{(3)}_{\Omega\Omega}(\vec{r})\rangle&=&\sigma \langle\tilde{\vec{E}}^{(3)}_{\Omega,\Omega}(\vec{r})\rangle,\\
+\nonumber
+\langle\tilde{\vec{\mathcal{P}}}_{\Omega,\Omega}^{(3)}(\vec{r})\rangle&=&\kappa \langle\tilde{\vec{E}}^{(3)}_{\Omega,\Omega}(\vec{r})\rangle.
+\end{eqnarray}
+The relations for baryon conductivity and polarizabilty become
+\begin{eqnarray}\label{eq:kuboscaled}
+\langle\vec{j}_B(\vec{r})\rangle&=&\frac{\langle B_{\delta\Omega}\tilde{Q}^{(3)}_{\Omega,\Omega,\delta\Omega}\rangle}
+{\langle[\tilde{Q}^{(3)}_{\Omega,\Omega,\delta\Omega\rangle}]^2\rangle}
+\sigma\langle\vec{\tilde{E}}^{(3)}_{\Omega,\Omega}(\vec{r})\rangle,\\
+\nonumber
+\langle\vec{P}_B(\vec{r})\rangle&=&\frac{\langle B_{\delta\Omega}\tilde{Q}^{(3)}_{\Omega,\Omega,\delta\Omega}\rangle}
+{\langle[\tilde{Q}^{(3)}_{\Omega,\Omega,\delta\Omega\rangle}]^2\rangle}
+\kappa\langle\vec{\tilde{E}}^{(3)}_{\Omega,\Omega}(\vec{r})\rangle.
+\end{eqnarray}
+The ratio of correlators in the Eq.s (\ref{eq:kuboscaled}) would then not grow with $\Omega$, approaching a constant. Thus, the fluctuation of the baryon current in the center of a long flux tube would be proportional to the fluctuation of $\tilde{E}^{(3)}$ which would not continue to grow with $\Omega$. 
+
+
+\section{Compound Flux Tubes}
+
+\centerline{\includegraphics[width=0.75\textwidth]{figs/compoundtube.pdf}}
+
+
+\centerline{\includegraphics[width=0.65\textwidth]{figs/pq3.pdf}}
 
 \begin{acknowledgments}
 This work was supported by the Department of Energy Office of Science through grant number DE-FG02-03ER41259.
