@@ -62,21 +62,21 @@ yy=[0,50]
 plt.plot(xx,yy,linestyle='--',lw=1,color='k')
 
 plt.plot(pgluon,qgluon,linestyle='None',marker='o',color='k',label='gluon-like')
-plt.plot(pquark,qquark,linestyle='None',marker=(3,0,0),color='r',label='quark-like')
-plt.plot(pantiquark,qantiquark,linestyle='None',marker=(3,0,180),color='g',label='antiquark-like')
+plt.plot(pquark,qquark,linestyle='None',marker=(3,0,180),color='r',label='quark-like')
+plt.plot(pantiquark,qantiquark,linestyle='None',marker=(3,0,0),color='g',label='antiquark-like')
 
 ax.tick_params(axis='both', which='major', labelsize=14)
 ax.set_xticks(np.arange(0,50,3), minor=False)
 ax.set_xticklabels(np.arange(0,50,3), minor=False, family='serif')
 ax.set_xticks(np.arange(00,50,1), minor=True)
 ax.xaxis.set_major_formatter(ticker.FormatStrFormatter('%d'))
-plt.xlim(0,9)
+plt.xlim(-0.1,9.1)
 
 ax.set_yticks(np.arange(0,50,3), minor=False)
 ax.set_yticklabels(np.arange(0,50,3), minor=False, family='serif')
 ax.set_yticks(np.arange(00,50,1), minor=True)
 ax.yaxis.set_major_formatter(ticker.FormatStrFormatter('%0d'))
-plt.ylim(0,9)
+plt.ylim(-0.1,9.1)
 
 plt.xlabel('$p$', fontsize=18, weight='normal')
 plt.ylabel('$q$',fontsize=18)
@@ -106,27 +106,27 @@ ax.legend(framealpha=100, loc="upper left")
 
 ax = fig.add_axes([x0+0.5,0.14,plotwidth,0.8])
 plt.plot(Q3gluon,Q2gluon,linestyle='None',marker='o',color='k',label='pure glue')
-plt.plot(Q3quark,Q2quark,linestyle='None',marker=(3,0,0),color='r',label='quark-like')
-plt.plot(Q3antiquark,Q2antiquark,linestyle='None',marker=(3,0,180),color='g',label='antiquark-like')
+plt.plot(Q3quark,Q2quark,linestyle='None',marker=(3,0,180),color='r',label='quark-like')
+plt.plot(Q3antiquark,Q2antiquark,linestyle='None',marker=(3,0,0),color='g',label='antiquark-like')
 
 ax.tick_params(axis='both', which='major', labelsize=14)
 ax.set_xticks(np.arange(-2000,2000,50), minor=False)
 ax.set_xticklabels(np.arange(-2000,2000,50), minor=False, family='serif')
 ax.set_xticks(np.arange(-2000,2000,25), minor=True)
 ax.xaxis.set_major_formatter(ticker.FormatStrFormatter('%0d'))
-plt.xlim(-100,100.00001)
+plt.xlim(-103,103)
 
 ax.set_yticks(np.arange(0,1000,25), minor=False)
 ax.set_yticklabels(np.arange(0,1000,25), minor=False, family='serif')
 ax.set_yticks(np.arange(00,1000,5), minor=True)
 ax.yaxis.set_major_formatter(ticker.FormatStrFormatter('%0d'))
-plt.ylim(0,60.0001)
+plt.ylim(-1,60.0001)
 #ax.set_yticks(0.1:1.0:10.0:100.0, minor=True)
 #ax.yaxis.set_major_formatter(ticker.FormatStrFormatter('%.1e'))
 ax.yaxis.set_major_formatter(sformatter)
 
-plt.xlabel('$Q^{(3)}$', fontsize=18, weight='normal')
-plt.ylabel('$Q^{(2)}$',fontsize=18)
+plt.xlabel('$\langle Q^{(3)}\\rangle$', fontsize=18, weight='normal')
+plt.ylabel('$\langle Q^{(2)}\\rangle$',fontsize=18)
 
 Q20=(p0*p0+q0*q0+3.0*p0+3.0*q0+p0*q0)/3.0;
 Q30=(p0-q0)*(3.0+p0+2.0*q0)*(3.0+q0+2.0*p0)/18.0;

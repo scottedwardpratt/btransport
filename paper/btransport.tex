@@ -202,21 +202,28 @@ As was the case for the conductivity, this expression for the polarizability doe
 \subsection{Relation to Baryon Transport}
 
 As was promised previoisl, the goal of this subsection is to demonstrate how baryon transport is related to the field $\vec{E}^{(3)}$, which was in turn related to the cubic Casimir. The quadratic and cubic Casimirs can be expressed in terms of the color multiplet labels $p$ and $q$ through
-\begin{eqnarray}
-C^{\rm quadratic}&=&(p^2+q^2+3p+3q+pq)/3.0,\\
-C^{\rm cubic}&=&(p-q)(2p+q+3)(2q+3q+3).
+\begin{eqnarray}\label{eq:Q2Q3vspq}
+C^{\rm quadratic}&=&(p^2+q^2+3p+3q+pq)/3,\\
+C^{\rm cubic}&=&(p-q)(2p+q+3)(2q+p+3)/18.
 \end{eqnarray}
+The correlators $Q^{(2)}$ and $Q^{(2)}$ are given by the Casimirs,
+\begin{eqnarray}
+\langle p,q|Q^{(2)}_{\Omega,\Omega}|p,q\rangle&=&g^2C^{\rm quadratic},\\
+\langle p,q|Q^{(3)}_{\Omega,\Omega,\Omega}|p,q\rangle&=&g^3C^{\rm cubic},\\
+\end{eqnarray}
+where $g$ is the couling constant, which plays the role of the fundamental charge, the equivalent of $e$ in electromagnetism. For a quark, $(p=1,q=0)$, one finds that $\langle Q^{(2)}\rangle=4/3$ and $\langle Q^{(3)}\rangle=(10/9)g^3$. An antiquark yields the opposite expectation,  $\langle Q^{(3)}\rangle=-(10/9)g^3$.
+
 The multiplet labels $p$ and $q$ and the charge labels $Q^{(2)}$ and $Q^{(3)}$ represent alternative means to identify the multiplet. The labels $p$ and $q$ can be uniquely expressed in terms of the charges by solving a cubic equation. Defining
 \begin{eqnarray}
-c&\equiv&9Q^{(2)}+9,\\
+c&\equiv&9\langle Q^{(2)}/g^2\rangle+9,\\
 \nonumber
-d&\equiv&18Q^{(3)},\\
+d&\equiv&18\langle Q^{(3)}/g^3\rangle,\\
 \nonumber
 \alpha&=&-2\pi /3+\frac{1}{3}\cos^{-1}[(3d/2c)\sqrt{3/c}],\\
 \nonumber
 y&=&2\sqrt{c/3}\cos\alpha,\\
 \nonumber
-x&=&-2+\sqrt{4+Q^{(2)}-y^2/3},\\
+x&=&-2+\sqrt{4+\langle Q^{(2)}/g^2\rangle-y^2/3},\\
 \nonumber
 p&=&(x+y)/2,\\
 \nonumber
@@ -313,16 +320,76 @@ The ratio of correlators in the Eq.s (\ref{eq:kuboscaled}) would then not grow w
 
 The expressions in Eq. (\ref{eq:kuboscaled}) for the induced baryon current or polarizability provide insight into how color charge couples to baryon transport. For a system with non-zero conductivity, the application of the field $\vec{\tilde{E}^{{(3)}}}$ induces a current. Combined with Gauss's laws, Eq.s (\ref{eq:gauss}) and (\ref{eq:gauss_scaled}), one see how a sub-volume with quadratic charge $\tilde{Q}^{(2)}$ provides an energy per unit length to a tube of area $A$, in Eq. (\ref{eq:tension}). Further, if the sub-volume has a cubic charge, $\tilde{Q}$, it provides a field $E^{(3)}$, through Gauss's law. This field can then induce a baryon current, or if there is no conductivity, it induces a baryon polarization. 
 
-These relations offer particularly nice insight into the flux tubes. In that case one first chooses some point along the tube, and the subvolume $\Omega$ is then chosed as every part of a flux tube to one side of the bisection point. By assuming that the field is constant across a cross-sectional area that bisects a tube, one knows both the field, and thus the induced baryon transport. However, because this insight was based on Gauss's law, it does not necessarily translate well outside the paradigm of a flux tube. Even for a spherical volume one can imagine that the system has zero quadratic or cubic charge. But, that charge might have a dipole, or quadrupole moment. Thus, in general, it is challenging to calculate the field correlators outside the flux tube approximation. Even in the flux tube approximation, the Kubo relations are questionable because they are based on perturbation theory due to a slowly-changing applied field. But in reality, such fields exist only in extremely dynamic systems, such as during the first half fm/$c$ of a hadronic collision. Even inside a hadron, the relations are difficult to motivate because the quarks and antiquarks are not isolated to one side of some volume. 
+These relations offer particularly nice insight into the flux tubes. In that case one first chooses some point along the tube, and the subvolume $\Omega$ is then chosed as every part of a flux tube to one side of the bisection point. By assuming that the field is constant across a cross-sectional area that bisects a tube, one knows both the field, and thus the induced baryon transport. However, because this insight was based on Gauss's law, it does not necessarily translate well outside the paradigm of a flux tube. Even for a spherical volume one can imagine that the system has zero quadratic or cubic charge. But, that charge might have a dipole, or quadrupole moment. Thus, in general, it is challenging to calculate the field correlators outside the flux tube approximation. Even in the flux tube approximation, the Kubo relations are questionable because they are based on perturbation theory due to a slowly-changing applied field. But in reality, such fields exist only in extremely dynamic systems, such as during the first half fm/$c$ of a hadronic collision. Even inside a hadron, the relations are difficult to motivate because the quarks and antiquarks are not isolated to one side of some volume. Finally, one should not forget that perturbation theory fails in QCD for any length or time scales $\gtrsim$ 1 fm.
 
 Despite the limits to the applicability mentioned above, the relations do provide some useful insight, even if that insight mainly provide some theoretical backbone to heuristic arguments. In the next section, compound flux tubes, i.e. tubes where the sub-volumes are in states of higher-order color multiplets, are presented. This phenomenology might have more promise for further development, and perhaps provide predictive capability.
 
 \section{Compound Flux Tubes}
+\begin{figure}
+\centerline{\includegraphics[width=0.5\textwidth]{figs/compoundtube.pdf}}
+\caption{\label{fig:compoundtube}(color online)
+The upper illustration show how a Gaussian surface isolates a flux tube into to parts. The color multiplets have interchanged values of $p$ and $q$. The energy density is defined by $\langle Q^{(2)}\rangle$, where the charge operators cover the left-hand side. 
+}
+\end{figure}
 
-\centerline{\includegraphics[width=0.75\textwidth]{figs/compoundtube.pdf}}
+In Section \ref{sec:simpletubes}, simple flux tubes were discussed. The term ``simple'' was a tube with a quark at one end and an antiquark at the other. At any bisection point, the color multiplet to one side was either $(p=1,q=0)$ or $(p=0,q=1)$. Here, we discuss tubes where at the bisection point the multiplet to each might be described by a higher multiplet. For example havin a gluon to each side would be described by the octet $(p=1,q=1)$. By having multiple partons on a given side, any combination $(p,q)$ could be attained. The goal of this section is to investigate the possibilities of such combinations, and to understand how they might decay to the vacuum, which is a singlet $(p=0,q=0)$. The term ``compound'' tube refers to a tube with arbitrary $p$ and $q$. 
+
+Figure \ref{fig:compoundtube} illustrates a flux tube , where a Gaussian surface bisects the tube at some point as shown in the upper diagram. If the multiplet to one side is $(p,q)$ the multiplet describing the opposite side is $(q,p)$. Otherwise, the tube would not be in an overall color singlet. At the point of the bisection, the field-like color correlators are given by the color charges $Q^{(2)}$ and $Q^{(3)}$, which are simple functions of $p$ and $q$ defined in Eq. (\ref{eq:Q2Q3vspq}). The field energy is determined by $\langle Q^{(2)}\rangle_{\rm left}$ and the propensity to induce a baryon current is described by $\langle Q^{(3)}\rangle_{\rm left}$. If a $q\bar{q}$ pair tunnels through the vacuum, as shown in the lower diagram of Fig. \ref{fig:compoundtube}, the color multiplet of matter to the left of a point between the $q\bar{q}$ pair changes, and if it lowers $\langle Q^{(2)}\rangle_{\rm left}$, the energy density of the region between the $q\bar{q}$ is reduced. Eventually, $q\bar{q}$ pairs must be produced in such a way that one reaches a color singlet with $\langle Q^{(2)}\rangle_{\rm left}$.
+
+For the field-like correlators at some point to vanish, partons must pass the point where the defining Gaussian surface intersects the flux tube. When a parton pass through the surface, the color state of the matter changes. If the initial multiplet is $(p_i,q_i)$ the available final states $(p_f,q_f)$ depend on whether the parton was a gluon, a quark or an antiquark.
+\begin{eqnarray}
+(p_i,q_i)+{\rm gluon}&\rightarrow& (p_f,q_f)=\left\{
+\begin{array}{l}
+(p_i+2,q_i-1)\\
+(p_i+1,q_i-2)\\
+(p_i-1,q_i+2)\\
+(p_i-2,q_i+1)\\
+(p_i+1,q_i+1)\\
+(p_i-1,q_i-1)\\
+(p_i,q_i)~~({\rm two~multiplets})
+\end{array}
+\right.\\
+\nonumber
+(p_i,q_i)+{\rm quark}&\rightarrow& (p_f,q_f)=\left\{
+\begin{array}{l}
+(p_i+1,q_i)\\
+(p_i,q_i-1)\\
+(p_i-1,q_i+1)
+\end{array}
+\right.\\
+\nonumber
+(p_i,q_i)+{\rm antiquark}&\rightarrow& (p_f,q_f)=\left\{\begin{array}{l}
+(p_i,q_i+1)\\
+(p_i-1,q_i)\\
+(p_i+1,q_i-1)
+\end{array}
+\right.
+\end{eqnarray}
+
+If the initial tube is created by exchanging only gluons across the bisection point, the available multiplets must have $p-q$ in multiples of three. Even though such states were created by gluons passing through, both $p-q$ and $\langle Q^{(3)}\rangle_{\rm left}$ can be non-zero. Thus, they can induce baryon transport across the bisection point. However, if the decay involves gluon pairs, one can also return to the ground state without any quarks passing the bisection. If quarks and or antiquarks were initially exchanged across the bisection, one can also return to the ground state through the creation of gluon pairs if the difference in the quark number is a multiple of three. One can define a quark excess number as
+\begin{eqnarray}
+B_x&=\left\{\begin{array}{rl}
+1,&N_{\rm quarks}-N_{\rm antiquarks}=\cdots,-5,-2,1,4,7\cdots\\
+-1,&N_{\rm quarks}-N_{\rm antiquarks}=\cdots,-7,-4,-1,2,5\cdots\\
+0, &N_{\rm quarks}-N_{\rm antiquarks}=\cdots,-6,-3,0,3,6\cdots
+\end{array}\right.
+\end{eqnarray}
 
 
-\centerline{\includegraphics[width=0.65\textwidth]{figs/pq3.pdf}}
+
+
+
+
+
+
+\begin{figure}
+\centerline{\includegraphics[width=0.75\textwidth]{figs/pq3.pdf}}
+\caption{\label{fig:pq3}(color online)
+Color multiplets are shown as a function of $(p,q)$ in the left-side panel. Starting from the singlet, ($p=0,q=0$), one can combine gluons to reach any of the multiplets denoted by black circles. These ``gluon-like'' states,  can also be reached by combining quarks and antiquarks if the difference of the number of quarks and antiquarks is a multiple of three. To reach a ``quark-like state'', one where $(p-q)/3$ has a remainder of +1 or -2, one can add a quark to a gluon-like state. One can reach an ``antiquark-like state'', one where the remainder of $(p-q)/3$ is -1 or 2, by adding an antiquark to a gluon-like state. The heavy black lines show the states available after adding either a gluon (heavy black line), an antiquark (light green line) or a quark (light dotted line). If gluon creation is possible, the most efficient way the system can reach a color singlet is to create gluon pairs, or perhaps one quark or antiquark depending on whether the original state is gluon-like, quark-like or antiquark-like. If gluonic steps are not permitted the most efficient decay mechanism is to add $p$ antiquarks and $q$ quarks. The right-side panel represents the same states, but the states are plotted as $\langle Q^{(2)}\rangle$ vs $\langle Q^{(3)}\rangle$. In this basis the energy per unit length is a function of $\langle Q^{(2)}\rangle$ and the field driving the baryon current is $\langle Q^{(3)}\rangle$.}
+\end{figure}
+
+
+
 
 \begin{acknowledgments}
 This work was supported by the Department of Energy Office of Science through grant number DE-FG02-03ER41259.
