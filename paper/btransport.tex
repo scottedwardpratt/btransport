@@ -127,7 +127,7 @@ E^{(2)}_{\Omega,i}(x)&=&\langle G^{(2)0i}_{\Omega}(x)\rangle,\\
 E^{(3)}_{\Omega_1,\Omega_2,i}(x)&=&\langle G^{(3)0i}_{\Omega_1,\Omega_2}(x)\rangle.
 \end{eqnarray}
 These represent two measures of the color electric field, but are in fact correlators. They have no color index, as their color is defined relative to the color of the matter within the volume $\Omega$. These spatial vectors participate in two versions of Gauss's Law,
-\begin{eqnarray}
+\begin{eqnarray}\label{eq:gauss}
  \oint d\vec{S}_2\cdot\vec{E}^{(2)}_{\Omega_1}(x_2)&=&Q^{(2)}_{\Omega_1,\Omega_2},\\
  \nonumber
  \oint d\vec{S}_3\cdot\vec{E}^{(3)}_{\Omega_1,\Omega_2}(x_3)&=&Q^{(3)}_{\Omega_1,\Omega_2,\Omega_3}.
@@ -147,7 +147,7 @@ For a single charge $a$, $\langle Q_{a,\Omega}Q_{a,\Omega}\rangle=\langle Q^{(2)
  &=&\frac{1}{2}\frac{(E^{(2)}_{\Omega,\Omega})^2}{Q^{(2)}_{\Omega,\Omega}}.
 \end{eqnarray}
 The energy per unit length, or string tension is then
-\begin{eqnarray}
+\begin{eqnarray}\label{eq:tension}
 \frac{E}{L}&=&\frac{A}{2}\frac{(E^{(2)}_{\Omega,\Omega})^2}{Q^{(2)}_{\Omega,\Omega}}\\
 \nonumber
 &=&\frac{1}{2A}Q^{(2)}_{\Omega,\Omega}.
@@ -269,9 +269,9 @@ Thus, if one were to consider a long flux tube, with $\Omega$ defined as everyth
 One can scale the three operators above so that their dimensions and scaling with size are in line with the charge and field operators with which we are more accustomed.
 \begin{eqnarray}
 \tilde{\vec{E}}^{(2)}_{\Omega}(\vec{r})&\equiv&\frac{\tilde{\vec{E}}^{(2)}_{\Omega}(\vec{r})}{\langle Q^{(2)}_{\Omega,\Omega}\rangle^{1/2}},\\
-%\nonumber
+\nonumber
 \tilde{\rho}^{(3)}_{\Omega,\Omega}(\vec{r})&\equiv&\frac{\rho^{(3)}_{\Omega,\Omega}(\vec{r})}{\langle Q^{(2)}_{\Omega,\Omega}\rangle},\\
-%\nonumber
+\nonumber
 \vec{\tilde{\mathcal{P}}}_{\Omega,\Omega}^{(3)}(\vec{r})&\equiv&\frac{\vec{\tilde{\mathcal{P}}}_{\Omega_1,\Omega_2}^{(3)}}{\langle Q^{(2)}_{\Omega,\Omega}\rangle}\\
 \nonumber
 \tilde{Q}^{(3)}_{\Omega,\Omega,\delta\Omega}&\equiv&\frac{Q^{(3)}_{\Omega,\Omega,\delta\Omega}}{\langle Q^{(2)}_{\Omega,\Omega}\rangle},\\
@@ -280,8 +280,18 @@ One can scale the three operators above so that their dimensions and scaling wit
 \end{eqnarray}
 With these definitions, $\tilde{Q}^{(3)}$ has dimensions of charge and $\tilde{E}^{(2)}$ and $\tilde{E}^{(3)}$ both have dimensions of charge per distance. The energy density is then more in line with $|\tilde{E}_{\Omega}^{(2)}(\vec{r})|^2/2$. Again, this would be, roughly, the energy density arising from the charges within $\Omega$. Correlators using any of the quantities scaled as above would then no longer grow with increasing $\Omega$ for systems with no long-range correlations. The charge correlators involving two operators labeled by $\delta\Omega$ would scale with $\delta\Omega$. 
 
+Gauss's law relating  the scaled correlator $\tilde{E}^{(3)}$ to $\tilde{Q}^{(3)}$ is the same as that for the unscaled quantities.
+\begin{eqnarray}
+\oint_{\Omega} d\vec{A}\cdot\langle\vec{\tilde{E}}^{(3)}_{\Omega,\Omega}(\vec{r})\rangle&=&
+\langle \tilde{Q}^{(3)}_{\Omega,\Omega,\Omega}\rangle,
+\end{eqnarray}
+or for arbitrary hyper-surfaces
+\begin{eqnarray}\label{eq:gauss_scaled}
+\oint_{\Omega} d\vec{A}\cdot\langle\vec{\tilde{E}}^{(3)}_{\Omega,\Omega}(\vec{r})\rangle&=&
+\int d\Omega_{\mu}\cdot\langle \tilde{j}^{\mu(3)}_{\Omega,\Omega}(\vec{r})\rangle.
+\end{eqnarray}
 
-The Kubo relations would also become
+The Kubo relations for the scaled quantities become:
 \begin{eqnarray}
 \langle \vec{\tilde{j}}^{(3)}_{\Omega\Omega}(\vec{r})\rangle&=&\sigma \langle\tilde{\vec{E}}^{(3)}_{\Omega,\Omega}(\vec{r})\rangle,\\
 \nonumber
@@ -299,6 +309,13 @@ The relations for baryon conductivity and polarizabilty become
 \end{eqnarray}
 The ratio of correlators in the Eq.s (\ref{eq:kuboscaled}) would then not grow with $\Omega$, approaching a constant. Thus, the fluctuation of the baryon current in the center of a long flux tube would be proportional to the fluctuation of $\tilde{E}^{(3)}$ which would not continue to grow with $\Omega$. 
 
+\subsection{Applicability of Baryon Transport Relations}
+
+The expressions in Eq. (\ref{eq:kuboscaled}) for the induced baryon current or polarizability provide insight into how color charge couples to baryon transport. For a system with non-zero conductivity, the application of the field $\vec{\tilde{E}^{{(3)}}}$ induces a current. Combined with Gauss's laws, Eq.s (\ref{eq:gauss}) and (\ref{eq:gauss_scaled}), one see how a sub-volume with quadratic charge $\tilde{Q}^{(2)}$ provides an energy per unit length to a tube of area $A$, in Eq. (\ref{eq:tension}). Further, if the sub-volume has a cubic charge, $\tilde{Q}$, it provides a field $E^{(3)}$, through Gauss's law. This field can then induce a baryon current, or if there is no conductivity, it induces a baryon polarization. 
+
+These relations offer particularly nice insight into the flux tubes. In that case one first chooses some point along the tube, and the subvolume $\Omega$ is then chosed as every part of a flux tube to one side of the bisection point. By assuming that the field is constant across a cross-sectional area that bisects a tube, one knows both the field, and thus the induced baryon transport. However, because this insight was based on Gauss's law, it does not necessarily translate well outside the paradigm of a flux tube. Even for a spherical volume one can imagine that the system has zero quadratic or cubic charge. But, that charge might have a dipole, or quadrupole moment. Thus, in general, it is challenging to calculate the field correlators outside the flux tube approximation. Even in the flux tube approximation, the Kubo relations are questionable because they are based on perturbation theory due to a slowly-changing applied field. But in reality, such fields exist only in extremely dynamic systems, such as during the first half fm/$c$ of a hadronic collision. Even inside a hadron, the relations are difficult to motivate because the quarks and antiquarks are not isolated to one side of some volume. 
+
+Despite the limits to the applicability mentioned above, the relations do provide some useful insight, even if that insight mainly provide some theoretical backbone to heuristic arguments. In the next section, compound flux tubes, i.e. tubes where the sub-volumes are in states of higher-order color multiplets, are presented. This phenomenology might have more promise for further development, and perhaps provide predictive capability.
 
 \section{Compound Flux Tubes}
 
